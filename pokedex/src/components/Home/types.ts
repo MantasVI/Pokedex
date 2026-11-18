@@ -15,3 +15,33 @@ export type PokemonSpecies = {
     language: Generation;
   }[];
 };
+
+export type Stat = {
+  base_stat: number;
+  stat: Generation; // { name: "hp", url }
+};
+
+export type PokemonType = {
+  slot: number;
+  type: Generation;
+};
+
+export type Move = {
+  move: Generation;
+};
+
+export type PokemonStats = {
+  id: number;
+  name: string;
+  weight: number;
+  height: number;
+  moves: Move[];
+  types: PokemonType[]; // array
+  stats: Stat[]; // added
+  sprites: {
+    front_default: string;
+    other: {
+      "official-artwork": { front_default: string };
+    };
+  };
+};

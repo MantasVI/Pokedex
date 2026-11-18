@@ -1,0 +1,86 @@
+/* Page wrapper: centres the card */
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 50px 16px;
+}
+
+/* The card */
+.box {
+  --red: #ef5350;
+  --black: #1a1a1a;
+  --blue: #1e00ff;
+  --yellow: #fed944;
+  --hoveris: #617cd7;
+
+  width: 100%;
+  max-width: 640px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 32px;
+  border: 4px solid var(--red);
+  border-radius: 16px;
+  background: var(--yellow);
+  color: var(--black);
+  font-size: 16px;
+}
+
+/* Artwork, centred, in a white circle */
+.image {
+  align-self: center;
+  width: 260px;
+  height: 260px;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 12px;
+  border: 4px solid var(--blue);
+  border-radius: 50%;
+  background: white;
+}
+
+/* The info lines (ID, name, height…) */
+.box p {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  text-transform: capitalize;
+}
+
+/* The labels ("Pokedex ID:", "Pokemon Name:"…) */
+.box b {
+  margin-right: 6px;
+  color: var(--blue);
+}
+
+/* "Pokemon Type:" and "Pokemon skills…" headings */
+.box h3 {
+  margin: 16px 0 6px;
+  color: var(--blue);
+}
+
+/* Moves list as small tags in a grid */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+/* The heading inside .skills spans the whole row instead of taking one cell */
+.skills h3 {
+  grid-column: 1 / -1;
+}
+
+.skills span {
+  padding: 6px 10px;
+  border: 2px solid var(--blue);
+  border-radius: 999px;
+  background: white;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+}
