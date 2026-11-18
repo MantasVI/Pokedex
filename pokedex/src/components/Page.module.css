@@ -1,0 +1,116 @@
+/* Colours, same as the home page */
+.box {
+  --red: #ef5350;
+  --black: #1a1a1a;
+  --blue: #1e00ff;
+  --yellow: #fed944;
+  --hoveris: #617cd7;
+}
+
+/* The whole page is the grid of Pokémon */
+.box {
+  min-height: 100vh;
+  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 32px 16px 64px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  align-content: start;
+  padding: 40px;
+  border: 4px solid var(--red);
+  border-radius: 5px;
+  background-color: var(--yellow);
+}
+
+/* Background colour across the full width, not just the centred grid */
+:global(body) {
+  background: #beb0b0;
+}
+
+/* Each .gridas div wraps ONE link. display: contents removes the wrapper's
+   box, so the links themselves become the grid items. */
+.gridas {
+  display: contents;
+}
+
+.PageWelcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  font-size: 30px;
+  font-weight: 500;
+  background: #8c8383;
+  color: var(--yellow);
+  -webkit-text-stroke: 4px var(--blue);
+  paint-order: stroke fill; /* draws the outline behind the letters so it doesn't eat into them */
+  text-align: center;
+  gap: 8px;
+}
+
+/* Heading inside the welcome banner: inherits the colours and outline from .PageWelcome */
+.PageWelcome h1 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 900;
+}
+
+.PageWelcome p {
+  margin: 0;
+}
+
+.Linkas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 64px;
+  padding: 16px 10px;
+  border: 3px solid var(--blue);
+  border-radius: 12px;
+  background: var(--yellow);
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  box-shadow: 0 4px 0 var(--blue);
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Linkas:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 0 var(--blue);
+}
+
+/* Pressed-down effect when clicked */
+.Linkas:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--blue);
+}
+
+.boxImageLink {
+  padding: 25px;
+  border: 4px solid var(--blue);
+  border-radius: 10px;
+  background-color: var(--red);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: 0.2s;
+}
+.boxImageLink:hover {
+  background: var(--hoveris);
+}

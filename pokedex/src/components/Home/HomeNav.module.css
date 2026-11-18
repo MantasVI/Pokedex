@@ -1,24 +1,104 @@
+/* Colours, defined once and reused below */
 .box {
-  padding: 5px;
+  --red: #e3350d;
+  --black: #1a1a1a;
+  --gray: #f2f2f2;
+  --blue: #1e00ff;
+  --yellow: #fed944;
+}
 
-  align-items: center;
-  justify-content: center;
-  background: white;
+/* Page reset. :global() because body isn't part of this module */
+:global(body) {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Full-screen page, sections stacked like a Poké Ball */
+.box {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: black;
-  height: 50vh;
+  background: var(--gray);
+  text-align: center;
+}
 
-  font-size: larger;
-  row-gap: 15px;
+/* Top half of the ball */
+.boxred {
+  padding: 56px 16px 40px;
+  background: var(--red);
 }
-h1 {
-  color: black;
-  font-size: 100px;
+
+.boxred h1 {
+  margin: 0;
+  font-size: clamp(56px, 12vw, 110px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: var(--yellow);
+  /* blue outline around the letters, like the Pokémon logo */
+  -webkit-text-stroke: 4px var(--blue);
+  paint-order: stroke fill;
 }
+
+/* Black band across the middle */
+.boxblack {
+  padding: 14px 16px;
+  background: var(--black);
+}
+
+.boxblack p {
+  margin: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+/* Bottom half */
+.boxgray {
+  padding: 32px 16px 8px;
+}
+
+.boxgray p {
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Grid of generation buttons */
 .HomeNav {
-  display: flex;
-  flex-direction: column;
-  row-gap: 5px;
+  width: 100%;
+  max-width: 760px;
+  margin: 24px auto 48px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.Links {
+  padding: 16px 10px;
+  border: 3px solid var(--blue);
+  border-radius: 12px;
+  background: var(--yellow);
+  color: var(--blue);
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  box-shadow: 0 4px 0 var(--blue);
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+
+.Links:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 0 var(--blue);
+}
+
+/* Pressed-down effect when clicked */
+.Links:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--blue);
 }

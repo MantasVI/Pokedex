@@ -19,9 +19,15 @@ export default function Home() {
 
   return (
     <div className={styles.box}>
-      <h1>Hello!</h1>
-      <p>Welcome to the pokedex!</p>
-      <p>Select any generation of pokemon you want!</p>
+      <div className={styles.boxred}>
+        <h1>Hello!</h1>
+      </div>
+      <div className={styles.boxblack}>
+        <p>Welcome to the pokedex!</p>
+      </div>
+      <div className={styles.boxgray}>
+        <p>Select any generation of pokemon you want!</p>
+      </div>
 
       <HomeNav generation={generation} />
     </div>
